@@ -15,8 +15,11 @@
     'use strict';
 
     $(document).ready(function () {
-        observeDOM('message-in', (el) => {
-            el.css('background-color', 'blue');
+        observeDOM('.message-in', (el) => {
+            el.on("keydown", function (evt) {
+                console.log(evt)
+                evt.preventDefault();
+            })
         })
     });
 })();
