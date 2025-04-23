@@ -14,19 +14,24 @@
 (function() {
     'use strict';
 
-    $(document).ready(function () {
+    jQuery(function () {
         observeDOM('.message-in', ( /** @type {JQuery<HTMLElement>} */ el) => {
             el.on("keydown", function (/** @type {KeyboardEvent} */ evt) {
-                evt.preventDefault();
-                evt.stopPropagation()
+                
 
                 if(evt.ctrlKey) {
                     switch(evt.key.toUpperCase()) {
                         case "R":
+                            evt.preventDefault();
+                            evt.stopPropagation();
+
                             $('[data-icon="react"]', el).parent().trigger("click")
                         break;
                         case "T":
-                            $('[data-icon="down-context]', el).parent().trigger("click")
+                            evt.preventDefault();
+                            evt.stopPropagation();
+                            
+                            $('[data-icon="down-context"]', el).parent().trigger("click")
                         break;
                     }
                 }
