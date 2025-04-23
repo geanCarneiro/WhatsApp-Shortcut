@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Shortcut
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.4
 // @description  Script com jQuery para WhatsApp Web
 // @match        https://web.whatsapp.com/*
 // @grant        none
@@ -15,6 +15,8 @@
     'use strict';
 
     jQuery(function () {
+        alert("script carregado");
+
         observeDOM('.message-in', ( /** @type {JQuery<HTMLElement>} */ el) => {
             el.on("keydown", function (/** @type {KeyboardEvent} */ evt) {
                 
