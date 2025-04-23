@@ -15,8 +15,6 @@
     'use strict';
 
     jQuery(function () {
-        alert("script carregado");
-
         observeDOM('.message-in', ( /** @type {JQuery<HTMLElement>} */ el) => {
             el.on("keydown", function (/** @type {KeyboardEvent} */ evt) {
                 
