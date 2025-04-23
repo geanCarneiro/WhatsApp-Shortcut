@@ -27,7 +27,7 @@
 
                             $('[data-icon="react"]', el).parent().trigger("click")
                         break;
-                        case "T":
+                        case "Q":
                             evt.preventDefault();
                             evt.stopPropagation();
                             
