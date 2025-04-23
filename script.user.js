@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Shortcut
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.5
 // @description  Script com jQuery para WhatsApp Web
 // @match        https://web.whatsapp.com/*
 // @grant        none
