@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Shortcut
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Script com jQuery para WhatsApp Web
 // @match        https://web.whatsapp.com/*
 // @grant        none
@@ -18,10 +18,20 @@
         observeDOM('.message-in', ( /** @type {JQuery<HTMLElement>} */ el) => {
             el.on("keydown", function (/** @type {KeyboardEvent} */ evt) {
                 evt.preventDefault();
+                evt.stopPropagation()
 
-                if(evt.ctrlKey && evt.key.toUpperCase() === "R"){
-                    $('[data-icon="react"]', el).parent().trigger("click")
+                if(evt.ctrlKey) {
+                    switch(evt.key.toUpperCase()) {
+                        case "R":
+                            $('[data-icon="react"]', el).parent().trigger("click")
+                        break;
+                        case "T":
+                            $('[data-icon="down-context]', el).parent().trigger("click")
+                        break;
+                    }
                 }
+
+                
 
             })
         })
